@@ -1,0 +1,17 @@
+<img src="{{ company.logo_url }}" alt="{{ company.name }} logo">
+<h1>{{ company.name }}</h1>
+<p>Stock Value: ${{ company.stock_value }}</p>
+<p>Industry: {{ company.industry }}</p>
+<p>Description: {{ company.description }}</p>
+<h2>News</h2>
+<ul>
+{% for news_item in news %}
+    <li>
+        <h3>{{ news_item.title }}</h3>
+        <img src="{{ news_item.image_url }}" alt="{{ news_item.title }}">
+        <p>{{ news_item.description }}</p>
+        <p>Source: {{ news_item.source_url }}</p>
+        <p>Date: {{ news_item.date_time }}</p>
+    </li>
+{% endfor %}
+</ul>
