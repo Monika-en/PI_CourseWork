@@ -45,8 +45,8 @@ class Favourite(db.Model):
     __tablename__ = 'favourites'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    company_id = db.Column(db.Integer, db.ForeignKey('company.id'), nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
+    company_id = db.Column(db.Integer, nullable=False)
 
     # def __repr__(self):
         # return '<Favourites of {0}: {1}>'.format(self.type)
@@ -65,14 +65,14 @@ class Company(db.Model):
     def __repr__(self):
         return '<Company {0} ({1}), Price: {2}>'.format(self.name, self.symbol, self.stock_value)
 
-class News(db.Model)
-     __tablename__ = 'news'
+class News(db.Model):
+    __tablename__ = 'news'
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(512), nullable=False)
     text = db.Column(db.String(4000), nullable=False)
     source_url = db.Column(db.String(1024), nullable=False)
     image_url = db.Column(db.String(1024), nullable=False)
-    company_id = db.Column(db.Integer, db.ForeignKey('company.id'), nullable=False) 
+    company_id = db.Column(db.Integer, nullable=False) 
     is_breaking = db.Column(db.Integer)
     date_time = db.Column(db.Date)

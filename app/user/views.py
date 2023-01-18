@@ -7,6 +7,7 @@ from .. import db
 from ..models import Favourite, User
 from ..auth import views as auth
 from itsdangerous import URLSafeTimedSerializer
+from ..import app
 
 def flash_please_activate():
     if current_user.is_authenticated and current_user.activated == 0:
